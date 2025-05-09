@@ -11,6 +11,8 @@ app.get("/", (req, res) => {
 
 /** ABOUT ROUTE */
 app.get("/about", (req, res) => {
+  console.log("Pengembangan pada fitur about");
+
   res.status(200).json({ message: "What you looking for?" });
 });
 
