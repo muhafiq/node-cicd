@@ -11,7 +11,9 @@ app.get("/", (req, res) => {
 
 /** ABOUT ROUTE */
 app.get("/about", (req, res) => {
-  res.status(200).json({ message: "This is about route." }); // merge conflict
+  console.log("Pengembangan pada fitur about");
+
+  res.status(200).json({ message: "This is about route." });
 });
 
 /** USER ROUTE */
