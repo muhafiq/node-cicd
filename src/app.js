@@ -11,7 +11,17 @@ app.get("/", (req, res) => {
 
 /** ABOUT ROUTE */
 app.get("/about", (req, res) => {
-  res.status(200).json({ message: "What you looking for?" });
+  res.status(200).json({ message: "This is about route." }); // merge conflict
+});
+
+/** USER ROUTE */
+app.get("/users", (req, res) => {
+  const users = [
+    { name: "Afiq", password: "12345" },
+    { name: "Mamun", password: "qwerty" },
+  ];
+
+  res.status(200).json({ message: "Get all users.", data: users });
 });
 
 /** CATCH ALL ROUTES */

@@ -13,7 +13,20 @@ describe("Test all page", () => {
     const res = await supertest(app).get("/about");
 
     expect(res.status).toBe(200);
-    expect(res.body.message).toBe("What you looking for?");
+    expect(res.body.message).toBe("This is about route."); // merge conflict
+  });
+
+  it("should send users data", async () => {
+    const res = await supertest(app).get("/users");
+
+    const users = [
+      { name: "Afiq", password: "12345" },
+      { name: "Mamun", password: "qwerty" },
+    ];
+
+    expect(res.status).toBe(200);
+    expect(res.body.message).toBe("Get all users.");
+    expect(res.body.data).toStrictEqual(users);
   });
 
   it("should say Page not found!", async () => {
